@@ -36,96 +36,155 @@ public class Policy
       policyholderWeight = num4;
    }
    
-   // policyNum methods
+   /* 
+      setPolicyNumber method sets the number of the policy.
+      @param num1 The policy number.
+   */
    public void setPolicyNumber(int num1)
    {
       policyNum = num1;
    }
    
+   /*
+      getPolicyNumber method returns the policy number.
+      @return The policy number
+   */
    public int getPolicyNumber()
    {
       return policyNum;
    }
    
-   // providerName methods
+   /* 
+      setProviderName method sets the name of the provider.
+      @param name1 The name of the provider.
+   */
    public void setProviderName(String name1)
    {
       providerName = name1;
    }
    
+   /*
+      getProviderName method returns the name of the provider.
+      @return The name of the provider.
+   */
    public String getProviderName()
    {
       return providerName;
    }
    
-   // policyholderFirstN methods
+   /* 
+      setPolicyholderFirstName method sets the first name of the policyholder.
+      @param name1 The first name of the policyholder.
+   */
    public void setPolicyholderFirstName(String name1)
    {
       policyholderFirstN = name1;
    }
    
+   /*
+      getPolicyholderFirstName method returns the first name of the policyholder.
+      @return The first name of the policyholder.
+   */
    public String getPolicyholderFirstName()
    {
       return policyholderFirstN;
    }
    
-   // policyholderLastN methods
+   /* 
+      setPolicyholderLastName method sets the last name of the policyholder.
+      @param name1 The last name of the policyholder.
+   */
    public void setPolicyholderLastName(String name1)
    {
       policyholderLastN = name1;
    }
    
+   /*
+      getPolicyholderLastName method returns the last name of the policyholder.
+      @return The last name of the policyholder.
+   */
    public String getPolicyholderLastName()
    {
       return policyholderLastN;
    }
    
-   // policyholderAge methods
+   /* 
+      setPolicyholderAge method sets the age of the policyholder.
+      @param num1 The age of the policyholder.
+   */
    public void setPolicyholderAge(int num1)
    {
       policyholderAge = num1;
    }
    
+   /*
+      getPolicyholderAge method returns the age of the policyholder.
+      @return The age of the policyholder.
+   */
    public int getPolicyholderAge()
    {
       return policyholderAge;
    }
    
-   // policyholderIsSmoking methods
+   /* 
+      setPolicyholderIsSmoking method sets the smoking status of the policyholder.
+      @param isSmoker The smoking status of the policyholder. "smoker" or "non-smoker"
+   */
    public void setPolicyholderIsSmoking(String isSmoker)
    {
       policyholderIsSmoking = isSmoker;
    }
    
+   /*
+      getPolicyholderIsSmoking method returns the smoking status of the policyholder.
+      @return The smoking status of the policyholder. "smoker" or "non-smoker"
+   */
    public String getPolicyholderIsSmoking()
    {
       return policyholderIsSmoking;
    }
    
-   // policyholderHeight methods
+   /* 
+      setPolicyholderHeight method sets the height of the policyholder.
+      @param num1 The height of the policyholder.
+   */
    public void setPolicyholderHeight(double num1)
    {
       policyholderHeight = num1;
    }
    
+   /*
+      getPolicyholderHeight method returns the height of the policyholder.
+      @return The height of the policyholder.
+   */
    public double getPolicyholderHeight()
    {
       return policyholderHeight;
    }
    
-   // policyholderWeight methods
+   /* 
+      setPolicyholderWeight method sets the weight of the policyholder.
+      @param num1 The weight of the policyholder.
+   */
    public void setPolicyholderWeight(double num1)
    {
       policyholderWeight = num1;
    }
    
+   /*
+      getPolicyholderWeight method returns the weight of the policyholder.
+      @return The weight of the policyholder.
+   */
    public double getPolicyholderWeight()
    {
       return policyholderWeight;
    }
    
    
-   // BMI calculator method
+   /* 
+      getBMI method that calculates the bmi (Body Mass Index) of the policyholder.
+      @return bmi The BMI (Body Mass Index) of the policyholder.
+   */
    public double getBMI()
    {
       double bmi;
@@ -134,7 +193,11 @@ public class Policy
    }
    
    
-   // insurance policy price calculator method
+   /* 
+      getPolicyPrice method calculates the insurance price using policyholderAge, policyholderIsSmoking, and bmi.
+      @param bmi The BMI of the policyholder.
+      @return The insurance price.
+   */
    public double getPolicyPrice(double bmi)
    {
       double price = 600;
