@@ -155,4 +155,13 @@ public class PolicyHolder
       return price;
    }
    
+   /*
+      toString method returns and displays policyholderFirstN, policyholderLastN, policyholderAge, policyholderIsSmoking, policyholderHeight, and policyholderWeight properly.
+      @return The proper display of all the fields in the PolicyHolder class.
+   */
+   public String toString()
+   {
+      String str = "Policyholder's First Name: " + policyholderFirstN + "\nPolicyholder's Last Name: " + policyholderLastN + "\nPolicyholder's Age:" + policyholderAge + "\nPolicyholder's Smoking Status (Y/N): " + policyholderIsSmoking + "\nPolicyholder's Height: " + policyholderHeight + "\nPolicyholder's Weight: " + policyholderWeight + "\nPolicyholder's BMI: " + this.getBMI() + "\nPolicy Price: $" + this.getPolicyPrice(this.getBMI());
+      return str;
+   }
 }
