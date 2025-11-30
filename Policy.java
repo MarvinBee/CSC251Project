@@ -2,38 +2,22 @@ public class Policy
 {
    private int policyNum;
    private String providerName;
-   
-   
-   
+ 
+ 
    // no-arg constructor 
    public Policy()
    {
       policyNum = 0;
       providerName = "default";
-      /*
-      policyholderFirstN = "default";
-      policyholderLastN = "default";
-      policyholderAge = 0;
-      policyholderIsSmoking = "default";
-      policyholderHeight = 0.0;
-      policyholderWeight = 0.0;
-      */
    }
    
    // full-arg constructor
-   public Policy(int num1, String name1) // String name2, String name3, int num2, String isSmoker, double num3, double num4)
+   public Policy(int num1, String name1)
    {
       policyNum = num1;
       providerName = name1;
-      /*
-      policyholderFirstN = name2;
-      policyholderLastN = name3;
-      policyholderAge = num2;
-      policyholderIsSmoking = isSmoker;
-      policyholderHeight = num3;
-      policyholderWeight = num4;
-      */
    }
+   
    
    /* 
       setPolicyNumber method sets the number of the policy.
@@ -70,4 +54,16 @@ public class Policy
    {
       return providerName;
    } 
+   
+   /*
+      toString method returns and displays policyNum and ProviderName properly.
+      @return The proper display of policyNum and ProviderName.
+   */
+   public String toString()
+   {
+      String str = "Policy Number: " + policyNum + "\nProvider Name: " + providerName;
+      return str;
+   }
+   
+   
 }
