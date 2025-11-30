@@ -2,6 +2,7 @@ public class Policy
 {
    private int policyNum;
    private String providerName;
+   private static int instanceCount = 0;
  
  
    // no-arg constructor 
@@ -9,6 +10,7 @@ public class Policy
    {
       policyNum = 0;
       providerName = "default";
+      instanceCount++;
    }
    
    // full-arg constructor
@@ -16,6 +18,7 @@ public class Policy
    {
       policyNum = num1;
       providerName = name1;
+      instanceCount++;
    }
    
    
