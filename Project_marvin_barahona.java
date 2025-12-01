@@ -35,8 +35,11 @@ public class Project_marvin_barahona
          policyholderHeight = inputFile.nextDouble();
          policyholderWeight = inputFile.nextDouble();
          
-         // creates an object and adds it to the list.
-         policyObjList.add (new Policy(policyNum, providerName, policyholderFirstN, policyholderLastN, policyholderAge, policyholderIsSmoking, policyholderHeight, policyholderWeight));
+         // creates a policyholder object
+         PolicyHolder thisholder = new PolicyHolder(policyholderFirstN, policyholderLastN, policyholderAge, policyholderIsSmoking, policyholderHeight, policyholderWeight);
+         
+         // creates a policy object and adds it to the list.
+         policyObjList.add (new Policy(policyNum, providerName, thisholder));
          
          // checks if theirs more space
          if(inputFile.hasNext())
@@ -52,12 +55,16 @@ public class Project_marvin_barahona
          String tempSmokerStatus;
          final String SMOKER = "smoker";
          final String NONSMOKER = "non-smoker";
+         PolicyHolder tempPolicyHldr; // temporary policyholder object
          
          // gets the object at the index and sets it to a new object.
          Policy policyObj = policyObjList.get(index);
          
+         // creates a copy of the policyholder object
+         tempPolicyHldr = policyObj.getPolicyHolder();
+         
          // gets the number of smokers and non-smokers
-         tempSmokerStatus = policyObj.getPolicyholderIsSmoking();
+         tempSmokerStatus = tempPolicyHldr.getPolicyHolderIsSmoking();
          if (tempSmokerStatus.equals(SMOKER))
          {
             totalSmokers++;
@@ -68,18 +75,14 @@ public class Project_marvin_barahona
          }
          
          // displays the information
-         System.out.println("Policy Number: " + policyObj.getPolicyNumber());
-         System.out.println("Provider Name: " + policyObj.getProviderName());
-         System.out.println("Policyholder's First Name: " + policyObj.getPolicyholderFirstName());
-         System.out.println("Policyholder's Last Name: " + policyObj.getPolicyholderLastName());
-         System.out.println("Policyholder's Age: " + policyObj.getPolicyholderAge());
-         System.out.println("Policyholder's Smoking Status: " + policyObj.getPolicyholderIsSmoking());
-         System.out.printf("Policyholder's Height: %.1f inches\n", policyObj.getPolicyholderHeight());
-         System.out.printf("Policyholder's Weight: %.1f pounds\n", policyObj.getPolicyholderWeight());
-         System.out.printf("Policyholder's BMI: %.2f\n", policyObj.getBMI());
-         System.out.printf("Policy Price: $%.2f\n\n", policyObj.getPolicyPrice(policyObj.getBMI()));
-      
+         System.out.println(policyObj);
+         System.out.println(tempPolicyHldr);
       }
+      
+      
+      
+      // displays the number of instances
+      Policy.getObjectCount();
       
       // displays the number of smokers and non-smokers.
       System.out.println("The number of policies with a smoker is: " + totalSmokers);

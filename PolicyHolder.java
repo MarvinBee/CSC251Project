@@ -1,7 +1,9 @@
-
-
 public class PolicyHolder
+// open the class
 {
+   
+   // fields
+   
    private String policyholderFirstN;
    private String policyholderLastN;
    private int policyholderAge;
@@ -9,11 +11,36 @@ public class PolicyHolder
    private double policyholderHeight;
    private double policyholderWeight;
    
+   // full-arg constructor
+   public PolicyHolder(String firstN, String lastN, int age, String isSmoking, double height, double weight)
+   {
+   
+      policyholderFirstN = firstN;
+      policyholderLastN = lastN;
+      policyholderAge = age;
+      policyholderIsSmoking = isSmoking;
+      policyholderHeight = height;
+      policyholderWeight = weight;
+   }
+   
+   // copy constructor
+   public PolicyHolder(PolicyHolder object2)
+   {
+      policyholderFirstN = object2.policyholderFirstN;
+      policyholderLastN = object2.policyholderLastN;
+      policyholderAge = object2.policyholderAge;
+      policyholderIsSmoking = object2.policyholderIsSmoking;
+      policyholderHeight = object2.policyholderHeight;
+      policyholderWeight = object2.policyholderWeight;
+   }
+   
+   
+   
    /* 
       setPolicyholderFirstName method sets the first name of the policyholder.
       @param name1 The first name of the policyholder.
    */
-   public void setPolicyholderFirstName(String name1)
+   public void setPolicyHolderFirstName(String name1)
    {
       policyholderFirstN = name1;
    }
@@ -22,7 +49,7 @@ public class PolicyHolder
       getPolicyholderFirstName method returns the first name of the policyholder.
       @return The first name of the policyholder.
    */
-   public String getPolicyholderFirstName()
+   public String getPolicyHolderFirstName()
    {
       return policyholderFirstN;
    }
@@ -31,7 +58,7 @@ public class PolicyHolder
       setPolicyholderLastName method sets the last name of the policyholder.
       @param name1 The last name of the policyholder.
    */
-   public void setPolicyholderLastName(String name1)
+   public void setPolicyHolderLastName(String name1)
    {
       policyholderLastN = name1;
    }
@@ -40,7 +67,7 @@ public class PolicyHolder
       getPolicyholderLastName method returns the last name of the policyholder.
       @return The last name of the policyholder.
    */
-   public String getPolicyholderLastName()
+   public String getPolicyHolderLastName()
    {
       return policyholderLastN;
    }
@@ -49,7 +76,7 @@ public class PolicyHolder
       setPolicyholderAge method sets the age of the policyholder.
       @param num1 The age of the policyholder.
    */
-   public void setPolicyholderAge(int num1)
+   public void setPolicyHolderAge(int num1)
    {
       policyholderAge = num1;
    }
@@ -58,7 +85,7 @@ public class PolicyHolder
       getPolicyholderAge method returns the age of the policyholder.
       @return The age of the policyholder.
    */
-   public int getPolicyholderAge()
+   public int getPolicyHolderAge()
    {
       return policyholderAge;
    }
@@ -67,7 +94,7 @@ public class PolicyHolder
       setPolicyholderIsSmoking method sets the smoking status of the policyholder.
       @param isSmoker The smoking status of the policyholder. "smoker" or "non-smoker"
    */
-   public void setPolicyholderIsSmoking(String isSmoker)
+   public void setPolicyHolderIsSmoking(String isSmoker)
    {
       policyholderIsSmoking = isSmoker;
    }
@@ -76,7 +103,7 @@ public class PolicyHolder
       getPolicyholderIsSmoking method returns the smoking status of the policyholder.
       @return The smoking status of the policyholder. "smoker" or "non-smoker"
    */
-   public String getPolicyholderIsSmoking()
+   public String getPolicyHolderIsSmoking()
    {
       return policyholderIsSmoking;
    }
@@ -85,7 +112,7 @@ public class PolicyHolder
       setPolicyholderHeight method sets the height of the policyholder.
       @param num1 The height of the policyholder.
    */
-   public void setPolicyholderHeight(double num1)
+   public void setPolicyHolderHeight(double num1)
    {
       policyholderHeight = num1;
    }
@@ -94,7 +121,7 @@ public class PolicyHolder
       getPolicyholderHeight method returns the height of the policyholder.
       @return The height of the policyholder.
    */
-   public double getPolicyholderHeight()
+   public double getPolicyHolderHeight()
    {
       return policyholderHeight;
    }
@@ -103,7 +130,7 @@ public class PolicyHolder
       setPolicyholderWeight method sets the weight of the policyholder.
       @param num1 The weight of the policyholder.
    */
-   public void setPolicyholderWeight(double num1)
+   public void setPolicyHolderWeight(double num1)
    {
       policyholderWeight = num1;
    }
@@ -112,7 +139,7 @@ public class PolicyHolder
       getPolicyholderWeight method returns the weight of the policyholder.
       @return The weight of the policyholder.
    */
-   public double getPolicyholderWeight()
+   public double getPolicyHolderWeight()
    {
       return policyholderWeight;
    }
@@ -161,7 +188,14 @@ public class PolicyHolder
    */
    public String toString()
    {
-      String str = "Policyholder's First Name: " + policyholderFirstN + "\nPolicyholder's Last Name: " + policyholderLastN + "\nPolicyholder's Age:" + policyholderAge + "\nPolicyholder's Smoking Status (Y/N): " + policyholderIsSmoking + "\nPolicyholder's Height: " + policyholderHeight + "\nPolicyholder's Weight: " + policyholderWeight + "\nPolicyholder's BMI: " + this.getBMI() + "\nPolicy Price: $" + this.getPolicyPrice(this.getBMI());
+      String str = String.format("Policyholder's First Name: " + policyholderFirstN + 
+      "\nPolicyholder's Last Name: " + policyholderLastN + 
+      "\nPolicyholder's Age: " + policyholderAge + 
+      "\nPolicyholder's Smoking Status (Y/N): " + policyholderIsSmoking + 
+      "\nPolicyholder's Height: " + policyholderHeight + 
+      "\nPolicyholder's Weight: " + policyholderWeight + 
+      "\nPolicyholder's BMI: %.2f" + "\nPolicy Price: $%.2f \n", this.getBMI(), this.getPolicyPrice(this.getBMI()));
+      
       return str;
    }
 }
